@@ -5,23 +5,15 @@
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px">
-    <RelativeLayout
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/relativeLayout1">
-        <Button
-            android:text="Add"
-            android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/AddButton" />
-        <Button
-            android:text="Look Up"
-            android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/LookUpButon" />
-    </RelativeLayout>
+    <Button
+        android:text="Add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/AddButton"
+        android:layout_marginTop="175dip" />
+    <Button
+        android:text="Look Up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LookUpButton" />
 </LinearLayout>
