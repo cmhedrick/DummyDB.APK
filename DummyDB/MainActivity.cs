@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
+using System.IO;
 
 namespace DummyDB
 {
@@ -10,9 +11,18 @@ namespace DummyDB
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+            SetContentView(Resource.Layout.Main);
 
-            // Set our view from the "main" layout resource
-            // SetContentView (Resource.Layout.Main);
+            //Interface
+            Button addButton = FindViewById<Button>(Resource.Id.AddButton);
+            Button lookUpButton = FindViewById<Button>(Resource.Id.LookUpButton);
+
+            //Main Layout Button events
+            addButton.Click += (sender, e) =>
+            {
+                StartActivity(typeof(AddDummy));
+            };
+
         }
     }
 }
