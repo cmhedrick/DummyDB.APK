@@ -25,4 +25,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/SonaField"
         android:hint="i.e: Persona, Fursona, Dummy" />
+    <Button
+        android:text="Create Dummy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/CreateButton" />
 </LinearLayout>

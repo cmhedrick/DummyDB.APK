@@ -2,6 +2,7 @@
 using Android.Widget;
 using Android.OS;
 using System.IO;
+using SQLite;
 
 namespace DummyDB
 {
@@ -17,13 +18,39 @@ namespace DummyDB
             Button addButton = FindViewById<Button>(Resource.Id.AddButton);
             Button lookUpButton = FindViewById<Button>(Resource.Id.LookUpButton);
 
+            // create DB path
+            var docsFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
+            var pathToDatabase = System.IO.Path.Combine(docsFolder, "dummy.db");
+
+            // create db if needed
+            if (!File.Exists(pathToDatabase))
+            {
+                createDB(pathToDatabase);
+                var reason = "Dummy Database Created~";
+                Toast.MakeText(Application.Context, reason, ToastLength.Long).Show();
+            }
+
             //Main Layout Button events
             addButton.Click += (sender, e) =>
             {
                 StartActivity(typeof(AddDummy));
             };
-
         }
+
+        private string createDB(string path)
+        {
+            try
+            {
+                var connection = new SQLiteConnection(path);
+                connection.CreateTable<Dummy>();
+                return "Database created";
+            }
+            catch (SQLiteException ex)
+            {
+                return ex.Message;
+            }
+        }
+
     }
 }
 

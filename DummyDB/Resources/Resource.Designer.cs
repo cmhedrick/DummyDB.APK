@@ -60,11 +60,14 @@ namespace DummyDB
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050004
-			public const int AddButton = 2131034116;
-			
 			// aapt resource value: 0x7f050005
-			public const int LookUpButton = 2131034117;
+			public const int AddButton = 2131034117;
+			
+			// aapt resource value: 0x7f050004
+			public const int CreateButton = 2131034116;
+			
+			// aapt resource value: 0x7f050006
+			public const int LookUpButton = 2131034118;
 			
 			// aapt resource value: 0x7f050001
 			public const int NameField = 2131034113;
