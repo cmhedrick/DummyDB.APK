@@ -35,6 +35,12 @@ namespace DummyDB
             {
                 StartActivity(typeof(AddDummy));
             };
+
+            lookUpButton.Click += (sender, e) =>
+            {
+                StartActivity(typeof(LookUpDummy));
+            };
+
         }
 
         private string createDB(string path)
