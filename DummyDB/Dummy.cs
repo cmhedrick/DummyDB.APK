@@ -24,7 +24,7 @@ namespace DummyDB
 
         public override string ToString()
         {
-            return string.Format("[Dummy: ID={0}, Name={1}, Persona={2}]", ID, Name, Persona);
+            return string.Format("ID={0}, Name={1}, Persona={2}", ID, Name, Persona);
         }
     }
 }
