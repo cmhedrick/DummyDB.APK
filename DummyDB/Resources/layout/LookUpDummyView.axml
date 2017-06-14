@@ -8,7 +8,8 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/SearchField" />
+        android:id="@+id/SearchField"
+        android:hint="Name:" />
     <Button
         android:text="Look Up Name"
         android:layout_width="match_parent"

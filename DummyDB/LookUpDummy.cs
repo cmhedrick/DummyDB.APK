@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
+﻿using Android.App;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using SQLite;
+using System.Collections.Generic;
 
 namespace DummyDB
 {
@@ -54,8 +47,18 @@ namespace DummyDB
         private List<Dummy> LookUpName(string name, string path)
         {
             var conn = new SQLiteConnection(path);
-            var query = "SELECT * FROM Dummy WHERE Name = '" + name + "'";
-            var dummy_list = conn.Query<Dummy>(query);
+            List<Dummy> dummy_list;
+
+            if (name != null && name != "")
+            {
+                var query = "SELECT * FROM Dummy WHERE Name = '" + name + "'";
+                dummy_list = conn.Query<Dummy>(query);
+            }
+            else
+            {
+                var query = "SELECT * FROM Dummy";
+                dummy_list = conn.Query<Dummy>(query);
+            }
             return dummy_list;
         }
     }
